@@ -1,8 +1,8 @@
 class CreateAssignments < ActiveRecord::Migration[5.1]
   def change
     create_table :assignments do |t|
-      t.integer :timeslot_id
-      t.integer :boat_id
+      t.references :timeslot_id
+      t.references :boat_id
 
       t.timestamps
     end
