@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725023041) do
+ActiveRecord::Schema.define(version: 20170726033713) do
 
   create_table "assignments", force: :cascade do |t|
-    t.integer "timeslot_id_id"
-    t.integer "boat_id_id"
+    t.integer "timeslot_id"
+    t.integer "boat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["boat_id_id"], name: "index_assignments_on_boat_id_id"
-    t.index ["timeslot_id_id"], name: "index_assignments_on_timeslot_id_id"
+    t.integer "num_open"
+    t.index ["boat_id"], name: "index_assignments_on_boat_id"
   end
 
   create_table "boats", force: :cascade do |t|
@@ -29,11 +29,10 @@ ActiveRecord::Schema.define(version: 20170725023041) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "timeslot_id_id"
+    t.integer "timeslot_id"
     t.integer "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["timeslot_id_id"], name: "index_bookings_on_timeslot_id_id"
   end
 
   create_table "time_slots", force: :cascade do |t|

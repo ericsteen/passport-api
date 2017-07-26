@@ -1,4 +1,4 @@
-class BoatsController < ApplicationController
+class API::BoatsController < API::ApplicationController
   before_action :set_boat, only: [:show, :update, :destroy]
 
   # GET /boats

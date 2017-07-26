@@ -8,3 +8,4 @@ RSpec.describe "Bookings", type: :request do
     end
   end
 end
+# POST /api/bookings, params={ timeslot_id: <timeslot-1-id>, size: 6 }
