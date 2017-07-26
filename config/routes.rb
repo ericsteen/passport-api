@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :time_slots
-  resources :assignments
-  resources :bookings
-  resources :boats
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api, as: '', :defaults => {:format => :json} do
+    resources :time_slots, path: :timeslots
+    resources :assignments
+    resources :bookings
+    resources :boats
+  end
 end
